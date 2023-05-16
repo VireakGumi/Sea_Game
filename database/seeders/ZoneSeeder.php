@@ -15,10 +15,10 @@ class ZoneSeeder extends Seeder
     {
         //
         $zones = [
-            ['zone_name' => 'A', 'number_of_ticket' => 100],
-            ['zone_name' => 'B', 'number_of_ticket' => 100],
-            ['zone_name' => 'C', 'number_of_ticket' => 100],
-            ['zone_name' => 'D', 'number_of_ticket' => 100],
+            ['zone_name' => 'A', 'number_of_ticket' => 100, 'stadium_id' =>1],
+            ['zone_name' => 'B', 'number_of_ticket' => 100, 'stadium_id' =>1],
+            ['zone_name' => 'C', 'number_of_ticket' => 100, 'stadium_id' =>1],
+            ['zone_name' => 'D', 'number_of_ticket' => 100, 'stadium_id' =>1],
         ];
         foreach ($zones as $zone) {
             Zones::create($zone);

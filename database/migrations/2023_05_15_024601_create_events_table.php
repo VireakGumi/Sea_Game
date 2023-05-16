@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('zones', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('zone_name');
-            $table->integer('number_of_ticket');
+            $table->string('name_event');
+            $table->unsignedBigInteger('sport_id')->foreign('sport_id')->references('id')->on('sports')->onDelete('cascade');
             $table->unsignedBigInteger('stadium_id')->foreign('stadium_id')->references('id')->on('stadiums')->onDelete('cascade');
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('zones');
+        Schema::dropIfExists('events');
     }
 };
